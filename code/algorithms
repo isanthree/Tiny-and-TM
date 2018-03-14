@@ -1,0 +1,26 @@
+/*
+1、快速排序：输入数组，开始下标和结束下标
+*/
+void myqsort(int *a, int m1, int m2){	
+	//数组只有一个数的时候，直接返回
+	int i=m1, j=m2,temp;
+	if (i == j)
+		return;
+	//挑选哨兵，开始快排
+	temp = a[i];
+	while (i != j){
+		while (a[j] >= temp&&i < j)
+			j--;
+		if (i < j) a[i] = a[j];
+		while (a[i] <= temp&&i < j)
+			i++;
+		if (i < j) a[j] = a[i];
+	}
+	//哨兵归位
+	a[i] = temp;
+	//进行左右递归，并且判断左右是否长度为0，为0则不递归。
+	if (i>m1)
+		myqsort(a, m1, i - 1);
+	if (j < m2)
+		myqsort(a, j + 1, m2);
+}
