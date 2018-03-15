@@ -1,4 +1,4 @@
-/*
+﻿/*
 1、快速排序：输入数组，开始下标和结束下标
 */
 void myqsort(int *a, int m1, int m2){	
@@ -24,3 +24,5 @@ void myqsort(int *a, int m1, int m2){
 	if (j < m2)
 		myqsort(a, j + 1, m2);
 }
+
+/*进行一次更新*/
